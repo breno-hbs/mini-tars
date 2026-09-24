@@ -1,0 +1,13 @@
+{
+  "facts": [
+    {"id": "f01", "date": "2026-03-02", "text": "Decidimos usar Postgres em vez de MySQL por causa do suporte a JSON e da extensão de busca em texto."},
+    {"id": "f02", "date": "2026-03-10", "text": "O prazo da primeira versão foi movido de 15 de abril para 6 de maio porque a integração de pagamento atrasou."},
+    {"id": "f03", "date": "2026-03-18", "text": "A Marina passou a cuidar dos testes automatizados; o Rafael continua responsável pela infraestrutura."}
+  ],
+  "questions": [
+    {"id": "q01", "q": "Por que escolhemos Postgres e não MySQL?", "gold": ["f01"]},
+    {"id": "q02", "q": "Por que o prazo da primeira versão mudou?", "gold": ["f02"]},
+    {"id": "q03", "q": "Quem é o dono da qualidade do código?", "gold": ["f03"]},
+    {"id": "q04", "q": "Qual foi o orçamento aprovado para marketing?", "gold": []}
+  ]
+}

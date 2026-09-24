@@ -1,0 +1,231 @@
+{
+ "_aviso": "CONJUNTO DE TESTE RESERVADO E CONGELADO em 2026-09-23. Regras em evals/experimento-03.md: só roda no fim, com --final. Corpus: evals/cases.grande.json.",
+ "corpus": "evals/cases.grande.json",
+ "questions": [
+  {
+   "id": "t01",
+   "q_rascunho": "Como se chama o produto?",
+   "q": "qual nome do aplicativo?",
+   "gold": [
+    "d002"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t02",
+   "q_rascunho": "Como ficamos sabendo quando o sistema dá erro?",
+   "q": "Como vou saber se der erro no sistema?",
+   "gold": [
+    "d014"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t03",
+   "q_rascunho": "Tem limite de uso da API?",
+   "q": "Qual o limite usado da API?",
+   "gold": [
+    "d044"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t04",
+   "q_rascunho": "Em quanto tempo uma revisão de código deve acontecer?",
+   "q": "O código tem que ser revisando em quanto tempo?",
+   "gold": [
+    "d052"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "t05",
+   "q_rascunho": "Quanto tempo temos para consertar um bug grave?",
+   "q": "Se um bug aparecer, quanto tempo temos para arrumar?",
+   "gold": [
+    "d091"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t06",
+   "q_rascunho": "Quanto foi aprovado de orçamento para setembro?",
+   "q": "Qual o nosso orçamento para setembro?",
+   "gold": [
+    "d105"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "t07",
+   "q_rascunho": "Qual o tamanho máximo de foto do animal?",
+   "q": "A imagem do animal tem que ser qual tamanho?",
+   "gold": [
+    "d019"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "t08",
+   "q_rascunho": "Quanto dura uma consulta por padrão?",
+   "q": "Qual o tempo de duração de uma consulta?",
+   "gold": [
+    "d031"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "t09",
+   "q_rascunho": "Como foi a migração da clínica que veio das planilhas?",
+   "q": "A mudança que teve da migração das planilhas, como ocorreu?",
+   "gold": [
+    "d075",
+    "d055"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t10",
+   "q_rascunho": "Quem cuida do site?",
+   "q": "O site tem qalgum responsável que cuida?",
+   "gold": [
+    "d112"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "t11",
+   "q_rascunho": "Como está o tempo de resposta do suporte?",
+   "q": "o suporte esta respondendo rápido?",
+   "gold": [
+    "d117"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t12",
+   "q_rascunho": "Quais são as cores da marca?",
+   "q": "Quais as principais cores da marca ?",
+   "gold": [
+    "d009"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t13",
+   "q_rascunho": "Qual ferramenta usamos para ver gráficos de métricas?",
+   "q": "Onde podemos ver gráficos de métricas?",
+   "gold": [
+    "d063"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t14",
+   "q_rascunho": "Já testamos a segurança contra invasão?",
+   "q": "A segurança do site ja foi testada?",
+   "gold": [
+    "d097"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t15",
+   "q_rascunho": "Quanto custa registrar a marca?",
+   "q": "Qual é o valor para registrar a marca?",
+   "gold": [
+    "d028"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "t16",
+   "q_rascunho": "A agenda por rota já está sendo feita?",
+   "q": "Como esta funcionando o agendamento por rota?",
+   "gold": [
+    "d062"
+   ],
+   "tipo": "corrigido",
+   "status": "final"
+  },
+  {
+   "id": "t17",
+   "q_rascunho": "Em junho, o que descobrimos sobre o título da página inicial?",
+   "q": "O título da página inicial, oque ele mudou em junho?",
+   "gold": [
+    "d059"
+   ],
+   "tipo": "temporal",
+   "status": "final"
+  },
+  {
+   "id": "t18",
+   "q_rascunho": "Qual o salário do Thiago?",
+   "q": "O thiago recebe quanto?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "t19",
+   "q_rascunho": "A Pelo & Pluma continuou depois do teste gratuito?",
+   "q": "Após o período gratuito, a Pelo & Pluma ficou com a gente ?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "t20",
+   "q_rascunho": "Temos versão do sistema em inglês?",
+   "q": "o sistema tem outro idioma?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "t21",
+   "q_rascunho": "Usamos autenticação em dois fatores?",
+   "q": "como esta a autenticação do site?",
+   "gold": [
+    "f09"
+   ],
+   "tipo": "vocabulario",
+   "status": "final",
+   "gold_original": [],
+   "nota_gold": "Ao reescrever, o Breno trocou 'dois fatores' por 'autenticação do site', que passa a ser respondida por f09 (login por e-mail e senha). Gold ajustado pelo assistente antes de qualquer medição."
+  },
+  {
+   "id": "t22",
+   "q_rascunho": "Quem é o dono da clínica Bicho Bom?",
+   "q": "Quem é o responsável pela Bicho Bom?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final",
+   "nota": "Ambígua: d015 cita a Beatriz 'da clínica Bicho Bom' (quem sugeriu cores), sem dizer que é a responsável. Mantida como sem resposta; se aparecer no top 3, contar como ruído, não como acerto."
+  },
+  {
+   "id": "t23",
+   "q_rascunho": "Qual é o endereço da sede da empresa?",
+   "q": "onde fica localizada a o escritório da empresa?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final",
+   "nota": "Substitui a sem-resposta perdida em t21. Reescrita pelo Breno."
+  }
+ ]
+}

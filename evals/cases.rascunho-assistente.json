@@ -1,0 +1,460 @@
+{
+  "_aviso": "Projeto FICTÍCIO (app de agendamento para clínicas veterinárias). Fatos e perguntas são RASCUNHO escrito pelo assistente. Reescreva cada pergunta com suas palavras e troque status para 'final' antes de confiar na nota.",
+  "facts": [
+    {
+      "id": "f01",
+      "date": "2026-03-02",
+      "text": "Decidimos usar Postgres em vez de MySQL por causa do suporte a JSON e da busca em texto."
+    },
+    {
+      "id": "f02",
+      "date": "2026-03-04",
+      "text": "O backend será em Python com FastAPI e o front-end em React."
+    },
+    {
+      "id": "f03",
+      "date": "2026-03-10",
+      "text": "O prazo da primeira versão foi movido de 15 de abril para 6 de maio porque a integração de pagamento atrasou."
+    },
+    {
+      "id": "f04",
+      "date": "2026-03-12",
+      "text": "O gateway de pagamento escolhido é o Pagar.me, pela taxa menor no Pix."
+    },
+    {
+      "id": "f05",
+      "date": "2026-03-18",
+      "text": "A Marina passou a cuidar dos testes automatizados; o Rafael continua responsável pela infraestrutura."
+    },
+    {
+      "id": "f06",
+      "date": "2026-03-25",
+      "text": "O plano gratuito da hospedagem suporta até 500 clínicas antes de precisar de upgrade."
+    },
+    {
+      "id": "f07",
+      "date": "2026-04-02",
+      "text": "Reunião com a clínica Patas Felizes: pediram lembrete de vacina por WhatsApp."
+    },
+    {
+      "id": "f08",
+      "date": "2026-04-08",
+      "text": "Os lembretes por WhatsApp custam R$ 0,10 por mensagem e ficam fora do plano básico."
+    },
+    {
+      "id": "f09",
+      "date": "2026-04-15",
+      "text": "O login será por e-mail e senha; login social foi adiado para depois da v1."
+    },
+    {
+      "id": "f10",
+      "date": "2026-04-22",
+      "text": "A agenda passou a bloquear horários duplicados usando uma restrição no banco, não só no código."
+    },
+    {
+      "id": "f11",
+      "date": "2026-05-06",
+      "text": "A versão 1.0 foi publicada para 3 clínicas piloto."
+    },
+    {
+      "id": "f12",
+      "date": "2026-05-09",
+      "text": "Bug: clínicas em fuso diferente de São Paulo viam horários errados; corrigido guardando tudo em UTC."
+    },
+    {
+      "id": "f13",
+      "date": "2026-05-14",
+      "text": "A clínica piloto Vida Animal cancelou o teste porque achou o cadastro de pacientes lento."
+    },
+    {
+      "id": "f14",
+      "date": "2026-05-20",
+      "text": "O cadastro de pacientes ficou 4 vezes mais rápido depois de adicionar um índice na tabela."
+    },
+    {
+      "id": "f15",
+      "date": "2026-05-28",
+      "text": "Decidimos não construir aplicativo móvel nativo; a versão web responsiva é suficiente por ora."
+    },
+    {
+      "id": "f16",
+      "date": "2026-06-03",
+      "text": "O preço do plano básico é R$ 79 por mês por clínica."
+    },
+    {
+      "id": "f17",
+      "date": "2026-06-10",
+      "text": "Correção: o preço do plano básico passou a R$ 89 por mês depois de contarmos o custo dos lembretes."
+    },
+    {
+      "id": "f18",
+      "date": "2026-06-17",
+      "text": "A Marina saiu do projeto; os testes automatizados voltaram para o Rafael."
+    },
+    {
+      "id": "f19",
+      "date": "2026-06-24",
+      "text": "Contratamos uma contadora, a Helena, para cuidar da emissão de notas fiscais."
+    },
+    {
+      "id": "f20",
+      "date": "2026-07-01",
+      "text": "O tempo médio de resposta da API caiu de 800 ms para 250 ms depois do cache das agendas."
+    },
+    {
+      "id": "f21",
+      "date": "2026-07-08",
+      "text": "Usamos Redis para o cache e ele roda junto com o banco no mesmo servidor."
+    },
+    {
+      "id": "f22",
+      "date": "2026-07-15",
+      "text": "O backup do banco é diário às 3h e guardado por 30 dias."
+    },
+    {
+      "id": "f23",
+      "date": "2026-07-22",
+      "text": "Um teste de restauração de backup falhou por falta de permissão; corrigido no mesmo dia."
+    },
+    {
+      "id": "f24",
+      "date": "2026-08-05",
+      "text": "A clínica Patas Felizes pediu relatório mensal de faltas dos clientes; entra na v1.2."
+    },
+    {
+      "id": "f25",
+      "date": "2026-08-12",
+      "text": "A versão 1.1 trouxe o lembrete de vacina por WhatsApp."
+    },
+    {
+      "id": "f26",
+      "date": "2026-08-19",
+      "text": "Houve uma queda de 40 minutos causada por um deploy sem aviso; passamos a fazer deploy só fora do horário comercial."
+    },
+    {
+      "id": "f27",
+      "date": "2026-08-26",
+      "text": "A meta é chegar a 20 clínicas pagantes até o fim de dezembro."
+    },
+    {
+      "id": "f28",
+      "date": "2026-09-02",
+      "text": "Em setembro, 9 clínicas estão pagando; 2 do piloto cancelaram."
+    },
+    {
+      "id": "f29",
+      "date": "2026-09-09",
+      "text": "O Rafael vai reduzir para meio período em outubro; o Diego assume a infraestrutura."
+    },
+    {
+      "id": "f30",
+      "date": "2026-09-16",
+      "text": "Decisão: pausar novas funcionalidades em outubro e focar em estabilidade e testes."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "q": "Qual banco de dados foi escolhido e por quê?",
+      "gold": [
+        "f01"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q02",
+      "q": "Em que linguagem é o servidor?",
+      "gold": [
+        "f02"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q03",
+      "q": "Por que o prazo da v1 atrasou?",
+      "gold": [
+        "f03"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q04",
+      "q": "Quanto custa cobrar via Pix?",
+      "gold": [
+        "f04"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q05",
+      "q": "Quem cuida dos testes hoje?",
+      "gold": [
+        "f18"
+      ],
+      "tipo": "corrigido",
+      "status": "rascunho"
+    },
+    {
+      "id": "q06",
+      "q": "Quem cuidava dos testes em março?",
+      "gold": [
+        "f05"
+      ],
+      "tipo": "temporal",
+      "status": "rascunho"
+    },
+    {
+      "id": "q07",
+      "q": "Quantas clínicas a hospedagem gratuita aguenta?",
+      "gold": [
+        "f06"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q08",
+      "q": "O que a Patas Felizes pediu na reunião de abril?",
+      "gold": [
+        "f07"
+      ],
+      "tipo": "temporal",
+      "status": "rascunho"
+    },
+    {
+      "id": "q09",
+      "q": "Quanto custa cada lembrete enviado pelo celular do cliente?",
+      "gold": [
+        "f08"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q10",
+      "q": "Como os usuários entram no sistema?",
+      "gold": [
+        "f09"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q11",
+      "q": "Como evitamos dois agendamentos no mesmo horário?",
+      "gold": [
+        "f10"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q12",
+      "q": "Quando a primeira versão foi ao ar e para quantos clientes?",
+      "gold": [
+        "f11"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q13",
+      "q": "Por que os horários apareciam errados para algumas clínicas?",
+      "gold": [
+        "f12"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q14",
+      "q": "Por que a Vida Animal desistiu?",
+      "gold": [
+        "f13"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q15",
+      "q": "O que fizemos para acelerar o cadastro de pacientes?",
+      "gold": [
+        "f14"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q16",
+      "q": "Vamos ter app de celular?",
+      "gold": [
+        "f15"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q17",
+      "q": "Qual é o preço atual do plano básico?",
+      "gold": [
+        "f17"
+      ],
+      "tipo": "corrigido",
+      "status": "rascunho"
+    },
+    {
+      "id": "q18",
+      "q": "Quem emite as notas fiscais?",
+      "gold": [
+        "f19"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q19",
+      "q": "O que melhorou o desempenho da API?",
+      "gold": [
+        "f20"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q20",
+      "q": "Onde roda o Redis?",
+      "gold": [
+        "f21"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q21",
+      "q": "De quanto em quanto tempo fazemos backup e por quanto tempo guardamos?",
+      "gold": [
+        "f22"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q22",
+      "q": "O que aconteceu com o teste de restauração em julho?",
+      "gold": [
+        "f23"
+      ],
+      "tipo": "temporal",
+      "status": "rascunho"
+    },
+    {
+      "id": "q23",
+      "q": "Quando saiu o lembrete de vacina?",
+      "gold": [
+        "f25"
+      ],
+      "tipo": "temporal",
+      "status": "rascunho"
+    },
+    {
+      "id": "q24",
+      "q": "Por que passamos a evitar deploy no horário comercial?",
+      "gold": [
+        "f26"
+      ],
+      "tipo": "direto",
+      "status": "rascunho"
+    },
+    {
+      "id": "q25",
+      "q": "O que a Patas Felizes pediu em agosto?",
+      "gold": [
+        "f24"
+      ],
+      "tipo": "temporal",
+      "status": "rascunho"
+    },
+    {
+      "id": "q26",
+      "q": "Qual é a meta de clínicas pagantes para o fim do ano?",
+      "gold": [
+        "f27"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q27",
+      "q": "Quantas clínicas pagam hoje?",
+      "gold": [
+        "f28"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q28",
+      "q": "Quem cuidará da infraestrutura depois de outubro?",
+      "gold": [
+        "f29"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q29",
+      "q": "O que vamos priorizar em outubro?",
+      "gold": [
+        "f30"
+      ],
+      "tipo": "vocabulario",
+      "status": "rascunho"
+    },
+    {
+      "id": "q30",
+      "q": "Qual foi o orçamento aprovado para marketing?",
+      "gold": [],
+      "tipo": "sem-resposta",
+      "status": "rascunho"
+    },
+    {
+      "id": "q31",
+      "q": "Qual é o CNPJ da empresa?",
+      "gold": [],
+      "tipo": "sem-resposta",
+      "status": "rascunho"
+    },
+    {
+      "id": "q32",
+      "q": "Quem é o principal concorrente do produto?",
+      "gold": [],
+      "tipo": "sem-resposta",
+      "status": "rascunho"
+    },
+    {
+      "id": "q33",
+      "q": "Qual foi o faturamento de agosto?",
+      "gold": [],
+      "tipo": "sem-resposta",
+      "status": "rascunho"
+    },
+    {
+      "id": "q34",
+      "q": "Qual provedor de e-mail usamos para enviar mensagens?",
+      "gold": [],
+      "tipo": "sem-resposta",
+      "status": "rascunho"
+    },
+    {
+      "id": "q35",
+      "q": "Qual é a política de reembolso para as clínicas?",
+      "gold": [],
+      "tipo": "sem-resposta",
+      "status": "rascunho"
+    }
+  ]
+}

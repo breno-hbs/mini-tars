@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mini-tars"
+version = "0.0.1"
+description = "Servidor de memória (MCP) auto-hospedado para assistentes de IA."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Breno Henrique Bortoloti Santos" }]
+dependencies = [
+  "mcp>=2,<3",
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "tzdata; sys_platform == 'win32'",  # o Windows não traz o banco de fusos horários
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-timeout>=2"]
+
+[project.scripts]
+mini-tars = "mini_tars.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mini_tars"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+timeout = 60

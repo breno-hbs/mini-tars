@@ -1,0 +1,945 @@
+{
+ "_aviso": "Projeto FICTÍCIO (app de agendamento para clínicas veterinárias). Fatos escritos pelo assistente; perguntas reescritas pelo Breno em 2026-09-23. Em q03, q04 e q09 o assistente ajustou o 'gold' ANTES de ver a nota, porque o significado da pergunta mudou (ver nota_gold e cases.original-gold.json).",
+ "facts": [
+  {
+   "id": "f01",
+   "date": "2026-03-02",
+   "text": "Decidimos usar Postgres em vez de MySQL por causa do suporte a JSON e da busca em texto."
+  },
+  {
+   "id": "f02",
+   "date": "2026-03-04",
+   "text": "O backend será em Python com FastAPI e o front-end em React."
+  },
+  {
+   "id": "f03",
+   "date": "2026-03-10",
+   "text": "O prazo da primeira versão foi movido de 15 de abril para 6 de maio porque a integração de pagamento atrasou."
+  },
+  {
+   "id": "f04",
+   "date": "2026-03-12",
+   "text": "O gateway de pagamento escolhido é o Pagar.me, pela taxa menor no Pix."
+  },
+  {
+   "id": "f05",
+   "date": "2026-03-18",
+   "text": "A Marina passou a cuidar dos testes automatizados; o Rafael continua responsável pela infraestrutura."
+  },
+  {
+   "id": "f06",
+   "date": "2026-03-25",
+   "text": "O plano gratuito da hospedagem suporta até 500 clínicas antes de precisar de upgrade."
+  },
+  {
+   "id": "f07",
+   "date": "2026-04-02",
+   "text": "Reunião com a clínica Patas Felizes: pediram lembrete de vacina por WhatsApp."
+  },
+  {
+   "id": "f08",
+   "date": "2026-04-08",
+   "text": "Os lembretes por WhatsApp custam R$ 0,10 por mensagem e ficam fora do plano básico."
+  },
+  {
+   "id": "f09",
+   "date": "2026-04-15",
+   "text": "O login será por e-mail e senha; login social foi adiado para depois da v1."
+  },
+  {
+   "id": "f10",
+   "date": "2026-04-22",
+   "text": "A agenda passou a bloquear horários duplicados usando uma restrição no banco, não só no código."
+  },
+  {
+   "id": "f11",
+   "date": "2026-05-06",
+   "text": "A versão 1.0 foi publicada para 3 clínicas piloto."
+  },
+  {
+   "id": "f12",
+   "date": "2026-05-09",
+   "text": "Bug: clínicas em fuso diferente de São Paulo viam horários errados; corrigido guardando tudo em UTC."
+  },
+  {
+   "id": "f13",
+   "date": "2026-05-14",
+   "text": "A clínica piloto Vida Animal cancelou o teste porque achou o cadastro de pacientes lento."
+  },
+  {
+   "id": "f14",
+   "date": "2026-05-20",
+   "text": "O cadastro de pacientes ficou 4 vezes mais rápido depois de adicionar um índice na tabela."
+  },
+  {
+   "id": "f15",
+   "date": "2026-05-28",
+   "text": "Decidimos não construir aplicativo móvel nativo; a versão web responsiva é suficiente por ora."
+  },
+  {
+   "id": "f16",
+   "date": "2026-06-03",
+   "text": "O preço do plano básico é R$ 79 por mês por clínica."
+  },
+  {
+   "id": "f17",
+   "date": "2026-06-10",
+   "text": "Correção: o preço do plano básico passou a R$ 89 por mês depois de contarmos o custo dos lembretes."
+  },
+  {
+   "id": "f18",
+   "date": "2026-06-17",
+   "text": "A Marina saiu do projeto; os testes automatizados voltaram para o Rafael."
+  },
+  {
+   "id": "f19",
+   "date": "2026-06-24",
+   "text": "Contratamos uma contadora, a Helena, para cuidar da emissão de notas fiscais."
+  },
+  {
+   "id": "f20",
+   "date": "2026-07-01",
+   "text": "O tempo médio de resposta da API caiu de 800 ms para 250 ms depois do cache das agendas."
+  },
+  {
+   "id": "f21",
+   "date": "2026-07-08",
+   "text": "Usamos Redis para o cache e ele roda junto com o banco no mesmo servidor."
+  },
+  {
+   "id": "f22",
+   "date": "2026-07-15",
+   "text": "O backup do banco é diário às 3h e guardado por 30 dias."
+  },
+  {
+   "id": "f23",
+   "date": "2026-07-22",
+   "text": "Um teste de restauração de backup falhou por falta de permissão; corrigido no mesmo dia."
+  },
+  {
+   "id": "f24",
+   "date": "2026-08-05",
+   "text": "A clínica Patas Felizes pediu relatório mensal de faltas dos clientes; entra na v1.2."
+  },
+  {
+   "id": "f25",
+   "date": "2026-08-12",
+   "text": "A versão 1.1 trouxe o lembrete de vacina por WhatsApp."
+  },
+  {
+   "id": "f26",
+   "date": "2026-08-19",
+   "text": "Houve uma queda de 40 minutos causada por um deploy sem aviso; passamos a fazer deploy só fora do horário comercial."
+  },
+  {
+   "id": "f27",
+   "date": "2026-08-26",
+   "text": "A meta é chegar a 20 clínicas pagantes até o fim de dezembro."
+  },
+  {
+   "id": "f28",
+   "date": "2026-09-02",
+   "text": "Em setembro, 9 clínicas estão pagando; 2 do piloto cancelaram."
+  },
+  {
+   "id": "f29",
+   "date": "2026-09-09",
+   "text": "O Rafael vai reduzir para meio período em outubro; o Diego assume a infraestrutura."
+  },
+  {
+   "id": "f30",
+   "date": "2026-09-16",
+   "text": "Decisão: pausar novas funcionalidades em outubro e focar em estabilidade e testes."
+  },
+  {
+   "id": "d001",
+   "date": "2026-03-01",
+   "text": "A Camila, designer freelancer, entregou o primeiro protótipo da tela de agenda no Figma."
+  },
+  {
+   "id": "d002",
+   "date": "2026-03-03",
+   "text": "Nome provisório do produto: VetAgenda. O registro do domínio custou R$ 40 por ano."
+  },
+  {
+   "id": "d003",
+   "date": "2026-03-05",
+   "text": "Criamos o repositório no GitHub com proteção na branch main e revisão obrigatória de um par."
+  },
+  {
+   "id": "d004",
+   "date": "2026-03-06",
+   "text": "O Rafael configurou a integração contínua com GitHub Actions; o pipeline roda lint e build a cada push."
+  },
+  {
+   "id": "d005",
+   "date": "2026-03-08",
+   "text": "Escolhemos a biblioteca Tailwind para estilizar o front-end, para acelerar as telas."
+  },
+  {
+   "id": "d006",
+   "date": "2026-03-11",
+   "text": "Definimos que cada clínica terá seu próprio subdomínio, por exemplo caoecia.vetagenda.example."
+  },
+  {
+   "id": "d008",
+   "date": "2026-03-14",
+   "text": "Decidimos usar Alembic para as migrações do banco de dados."
+  },
+  {
+   "id": "d009",
+   "date": "2026-03-16",
+   "text": "A paleta de cores oficial é verde-menta com cinza escuro; a Camila validou o contraste para acessibilidade."
+  },
+  {
+   "id": "d010",
+   "date": "2026-03-17",
+   "text": "Contrato de hospedagem assinado por 12 meses, com cobrança mensal em reais."
+  },
+  {
+   "id": "d011",
+   "date": "2026-03-19",
+   "text": "Bug: o campo de telefone aceitava letras; agora só aceita números com DDD."
+  },
+  {
+   "id": "d012",
+   "date": "2026-03-21",
+   "text": "Ficou decidido que o cadastro de tutores exige CPF, mas o campo é opcional para clínicas rurais."
+  },
+  {
+   "id": "d013",
+   "date": "2026-03-23",
+   "text": "Reunião semanal passou para segunda-feira às 9h30, por chamada de vídeo."
+  },
+  {
+   "id": "d014",
+   "date": "2026-03-24",
+   "text": "Adotamos o Sentry para monitorar erros no front-end e no backend."
+  },
+  {
+   "id": "d015",
+   "date": "2026-03-26",
+   "text": "A Beatriz, da clínica Bicho Bom, sugeriu cores diferentes por tipo de consulta na agenda."
+  },
+  {
+   "id": "d016",
+   "date": "2026-03-27",
+   "text": "Escolhemos o Pydantic para validar os dados de entrada da API."
+  },
+  {
+   "id": "d017",
+   "date": "2026-03-30",
+   "text": "Criamos uma planilha de riscos do projeto; o maior risco listado é depender de uma única pessoa na infraestrutura."
+  },
+  {
+   "id": "d018",
+   "date": "2026-04-01",
+   "text": "Início do quadro de tarefas no Trello com colunas: ideias, a fazer, em andamento, em revisão e pronto."
+  },
+  {
+   "id": "d019",
+   "date": "2026-04-03",
+   "text": "Definimos que o tamanho máximo de foto do animal no prontuário é 5 MB."
+  },
+  {
+   "id": "d021",
+   "date": "2026-04-06",
+   "text": "Bug: a agenda mostrava consultas canceladas em cinza claro e confundia os recepcionistas; agora ficam ocultas por padrão."
+  },
+  {
+   "id": "d022",
+   "date": "2026-04-07",
+   "text": "Reunião com a Dra. Fernanda, veterinária autônoma, que atende em domicílio e pediu agenda por rota."
+  },
+  {
+   "id": "d023",
+   "date": "2026-04-10",
+   "text": "O Lucas configurou o ambiente de homologação com dados fictícios de 50 clínicas."
+  },
+  {
+   "id": "d026",
+   "date": "2026-04-14",
+   "text": "Feedback de usuária: a recepcionista da clínica Bicho Bom achou o botão de novo agendamento pequeno demais."
+  },
+  {
+   "id": "d027",
+   "date": "2026-04-16",
+   "text": "O botão de novo agendamento foi ampliado e movido para o topo da tela."
+  },
+  {
+   "id": "d028",
+   "date": "2026-04-18",
+   "text": "Registramos a marca no INPI como pedido de teste fictício do plano jurídico; custo previsto de R$ 355."
+  },
+  {
+   "id": "d029",
+   "date": "2026-04-20",
+   "text": "Padronizamos as mensagens de commit no formato convencional, com prefixos feat, fix e chore."
+  },
+  {
+   "id": "d031",
+   "date": "2026-04-23",
+   "text": "Definimos duração padrão de consulta de 30 minutos, configurável por clínica e por tipo de serviço."
+  },
+  {
+   "id": "d032",
+   "date": "2026-04-24",
+   "text": "O Thiago criou o primeiro roteiro de perguntas frequentes para o suporte."
+  },
+  {
+   "id": "d033",
+   "date": "2026-04-25",
+   "text": "Bug: o PDF da receita saía com acentos quebrados; trocamos a fonte do gerador."
+  },
+  {
+   "id": "d034",
+   "date": "2026-04-28",
+   "text": "Reunião de planejamento: a v1 terá agenda, cadastro de tutores e pacientes, e cobrança de consulta."
+  },
+  {
+   "id": "d035",
+   "date": "2026-04-29",
+   "text": "Decidimos escrever a documentação da API em OpenAPI, gerada automaticamente pelo FastAPI."
+  },
+  {
+   "id": "d037",
+   "date": "2026-05-02",
+   "text": "Congelamos o código da v1 às 18h; só correções de bugs entram até a publicação."
+  },
+  {
+   "id": "d038",
+   "date": "2026-05-04",
+   "text": "Checklist de publicação concluído: migrações, variáveis de ambiente, monitoramento e página de status."
+  },
+  {
+   "id": "d040",
+   "date": "2026-05-08",
+   "text": "Feedback da clínica Cão & Cia: o calendário semanal é claro, mas falta visão mensal."
+  },
+  {
+   "id": "d042",
+   "date": "2026-05-12",
+   "text": "A visão mensal da agenda entrou na fila de prioridades da v1.1."
+  },
+  {
+   "id": "d043",
+   "date": "2026-05-13",
+   "text": "Reunião com um investidor anjo fictício, o Sr. Almeida: interessado, mas quer ver 10 clínicas pagantes."
+  },
+  {
+   "id": "d044",
+   "date": "2026-05-15",
+   "text": "Adotamos um limite de 100 requisições por minuto por clínica na API para evitar abuso."
+  },
+  {
+   "id": "d045",
+   "date": "2026-05-18",
+   "text": "Ficou definido que o relatório financeiro mostrará faturamento por veterinário e por tipo de consulta."
+  },
+  {
+   "id": "d046",
+   "date": "2026-05-19",
+   "text": "A Camila entregou os ícones finais em SVG para as espécies: cão, gato, ave e réptil."
+  },
+  {
+   "id": "d047",
+   "date": "2026-05-21",
+   "text": "Teste de usabilidade com 5 recepcionistas: todas concluíram um agendamento em menos de 1 minuto."
+  },
+  {
+   "id": "d049",
+   "date": "2026-05-25",
+   "text": "Bug: a busca por nome do tutor ignorava nomes com til; ajustamos a busca para desconsiderar acentos."
+  },
+  {
+   "id": "d050",
+   "date": "2026-05-27",
+   "text": "Começamos a campanha de indicação: cada clínica que indica outra ganha um mês de desconto."
+  },
+  {
+   "id": "d051",
+   "date": "2026-05-29",
+   "text": "Reunião de retrospectiva do mês: a comunicação melhorou, mas as revisões de código demoram mais de 2 dias."
+  },
+  {
+   "id": "d052",
+   "date": "2026-05-30",
+   "text": "Meta de revisão de código: no máximo 24 horas entre abrir e revisar uma solicitação."
+  },
+  {
+   "id": "d053",
+   "date": "2026-06-01",
+   "text": "O Thiago registrou 12 chamados de suporte em maio; a maioria pergunta como remarcar consultas."
+  },
+  {
+   "id": "d054",
+   "date": "2026-06-02",
+   "text": "Adicionamos um botão de remarcar consulta com um clique na agenda."
+  },
+  {
+   "id": "d055",
+   "date": "2026-06-04",
+   "text": "Reunião com a clínica Amigo Fiel, nova candidata: usa planilhas e quer migrar 3 mil pacientes."
+  },
+  {
+   "id": "d056",
+   "date": "2026-06-07",
+   "text": "Bug: a importação de CSV duplicava tutores com o mesmo telefone; agora o telefone é a chave de deduplicação."
+  },
+  {
+   "id": "d057",
+   "date": "2026-06-08",
+   "text": "Definimos o texto da página inicial: Agenda simples para clínicas veterinárias pequenas."
+  },
+  {
+   "id": "d058",
+   "date": "2026-06-09",
+   "text": "Publicamos o site institucional em uma hospedagem estática, com custo de R$ 15 por mês."
+  },
+  {
+   "id": "d059",
+   "date": "2026-06-11",
+   "text": "O teste A/B do título da página inicial mostrou 12 por cento mais cadastros com o título sobre economizar tempo."
+  },
+  {
+   "id": "d060",
+   "date": "2026-06-12",
+   "text": "Contrato de prestação de serviço com a Camila renovado por mais 3 meses."
+  },
+  {
+   "id": "d061",
+   "date": "2026-06-15",
+   "text": "Revisão de código: substituímos consultas manuais por um repositório de dados único para agendamentos."
+  },
+  {
+   "id": "d062",
+   "date": "2026-06-16",
+   "text": "Reunião com a Dra. Fernanda: o teste de agenda por rota ficou para depois da v1.2."
+  },
+  {
+   "id": "d063",
+   "date": "2026-06-18",
+   "text": "Instalamos um painel de métricas com Grafana; o primeiro gráfico é o número de consultas agendadas por dia."
+  },
+  {
+   "id": "d064",
+   "date": "2026-06-19",
+   "text": "Dia com 130 agendamentos, o recorde até agora."
+  },
+  {
+   "id": "d065",
+   "date": "2026-06-20",
+   "text": "Bug: horários de almoço do veterinário não eram respeitados em feriados; criamos um calendário de feriados por cidade."
+  },
+  {
+   "id": "d066",
+   "date": "2026-06-23",
+   "text": "O plano de suporte terá atendimento por chat de segunda a sexta, das 8h às 18h."
+  },
+  {
+   "id": "d067",
+   "date": "2026-06-25",
+   "text": "O Thiago percebeu que o chat recebe muitas perguntas fora do horário; adicionamos uma resposta automática."
+  },
+  {
+   "id": "d068",
+   "date": "2026-06-26",
+   "text": "Discussão sobre criar um plano para clínicas grandes; adiado até termos 15 clínicas."
+  },
+  {
+   "id": "d069",
+   "date": "2026-06-28",
+   "text": "Campanha em redes sociais: 4 posts por semana, produzidos pela Camila e pelo Thiago."
+  },
+  {
+   "id": "d075",
+   "date": "2026-07-07",
+   "text": "Migração dos 3 mil pacientes da Amigo Fiel concluída em 40 minutos, sem erros."
+  },
+  {
+   "id": "d076",
+   "date": "2026-07-09",
+   "text": "Feedback: a Amigo Fiel pediu campo de observação sobre comportamento do animal, como agressivo ou ansioso."
+  },
+  {
+   "id": "d078",
+   "date": "2026-07-13",
+   "text": "Revisão de código: a Beatriz, que é desenvolvedora júnior contratada, abriu sua primeira solicitação de mudança."
+  },
+  {
+   "id": "d079",
+   "date": "2026-07-14",
+   "text": "Definimos que o prontuário guarda o histórico de alterações, com data e usuário."
+  },
+  {
+   "id": "d080",
+   "date": "2026-07-16",
+   "text": "Cotação de seguro de responsabilidade digital: R$ 1.200 por ano; decisão adiada."
+  },
+  {
+   "id": "d081",
+   "date": "2026-07-17",
+   "text": "Bug: gráfico de faturamento somava consultas canceladas; corrigido filtrando por status."
+  },
+  {
+   "id": "d082",
+   "date": "2026-07-18",
+   "text": "O painel do Grafana ganhou um alerta quando a fila de trabalhos passa de 500 itens pendentes."
+  },
+  {
+   "id": "d083",
+   "date": "2026-07-21",
+   "text": "O Thiago propôs uma base de conhecimento pública; a Camila desenhou o layout."
+  },
+  {
+   "id": "d086",
+   "date": "2026-07-26",
+   "text": "A clínica Cão & Cia indicou outra clínica, a Pelo & Pluma, usando a campanha de indicação."
+  },
+  {
+   "id": "d087",
+   "date": "2026-07-27",
+   "text": "Revisamos o custo de hospedagem: o uso de armazenamento de fotos cresceu 3 GB no mês."
+  },
+  {
+   "id": "d089",
+   "date": "2026-08-01",
+   "text": "Começamos a escrever a documentação de uso, com 15 artigos previstos até o fim de agosto."
+  },
+  {
+   "id": "d091",
+   "date": "2026-08-04",
+   "text": "Reunião semanal: decidido que bugs críticos têm prazo de correção de 48 horas."
+  },
+  {
+   "id": "d092",
+   "date": "2026-08-06",
+   "text": "Bug: o app travava ao abrir a agenda de um veterinário com mais de 200 consultas no dia; adicionamos paginação."
+  },
+  {
+   "id": "d093",
+   "date": "2026-08-07",
+   "text": "O Lucas fez um curso rápido de segurança e propôs revisar as permissões de acesso ao banco."
+  },
+  {
+   "id": "d094",
+   "date": "2026-08-10",
+   "text": "Adicionamos a impressão da agenda diária com layout otimizado para papel A4."
+  },
+  {
+   "id": "d097",
+   "date": "2026-08-14",
+   "text": "Fizemos um teste de invasão básico com uma ferramenta automatizada; nenhuma falha grave encontrada."
+  },
+  {
+   "id": "d099",
+   "date": "2026-08-18",
+   "text": "A exportação de dados em planilha usa o formato CSV com separador ponto e vírgula."
+  },
+  {
+   "id": "d100",
+   "date": "2026-08-20",
+   "text": "A Camila entregou o novo layout do relatório mensal, com gráfico de barras e tabela de faltas."
+  },
+  {
+   "id": "d101",
+   "date": "2026-08-21",
+   "text": "Os testes automatizados do front-end passaram a rodar em paralelo e o tempo da integração contínua caiu de 14 para 6 minutos."
+  },
+  {
+   "id": "d103",
+   "date": "2026-08-24",
+   "text": "Feedback: a Pelo & Pluma achou o cadastro de vacinas confuso e sugeriu uma carteirinha digital."
+  },
+  {
+   "id": "d104",
+   "date": "2026-08-25",
+   "text": "A carteirinha digital de vacinas entrou no backlog como ideia para depois da v1.2."
+  },
+  {
+   "id": "d105",
+   "date": "2026-08-28",
+   "text": "Aprovamos o orçamento de setembro: R$ 2.400 para infraestrutura e ferramentas, sem contar salários."
+  },
+  {
+   "id": "d106",
+   "date": "2026-08-29",
+   "text": "O Thiago publicou a base de conhecimento com 12 artigos."
+  },
+  {
+   "id": "d107",
+   "date": "2026-08-30",
+   "text": "Retrospectiva de agosto: a base de conhecimento reduziu os chamados repetidos em 30 por cento."
+  },
+  {
+   "id": "d108",
+   "date": "2026-09-01",
+   "text": "O Lucas mudou o formato dos logs para JSON, facilitando a busca no painel de métricas."
+  },
+  {
+   "id": "d109",
+   "date": "2026-09-03",
+   "text": "Reunião com o Sr. Almeida: reforçou que só investe depois de 10 clínicas pagantes com renovação."
+  },
+  {
+   "id": "d111",
+   "date": "2026-09-07",
+   "text": "Definimos uma rotina de revisão trimestral de custos das ferramentas assinadas."
+  },
+  {
+   "id": "d112",
+   "date": "2026-09-08",
+   "text": "A Beatriz assumiu a manutenção do site institucional e da base de conhecimento."
+  },
+  {
+   "id": "d113",
+   "date": "2026-09-10",
+   "text": "Feedback da clínica Amigo Fiel: pediram uma tela para confirmar consultas em lote na véspera."
+  },
+  {
+   "id": "d114",
+   "date": "2026-09-11",
+   "text": "Contrato do domínio e do certificado revisado; a renovação foi agendada com lembrete de 60 dias."
+  },
+  {
+   "id": "d116",
+   "date": "2026-09-14",
+   "text": "Discussão sobre feriados regionais: o calendário por cidade será revisado a cada trimestre."
+  },
+  {
+   "id": "d117",
+   "date": "2026-09-15",
+   "text": "Suporte: o Thiago responde em média em 3 horas; a meta é 2 horas."
+  },
+  {
+   "id": "d118",
+   "date": "2026-09-17",
+   "text": "Adotamos o modelo de plantão de suporte alternado entre o Thiago e a Beatriz nos fins de semana."
+  },
+  {
+   "id": "d119",
+   "date": "2026-09-18",
+   "text": "A campanha de indicação já trouxe 2 clínicas novas em três meses."
+  }
+ ],
+ "questions": [
+  {
+   "id": "q01",
+   "q": "Onde vamos deixar os dados?",
+   "gold": [
+    "f01"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q02",
+   "q": "qual linguagem vamos usar?",
+   "gold": [
+    "f02"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q03",
+   "q": "qual versão estamos?",
+   "gold": [
+    "f25",
+    "f11"
+   ],
+   "tipo": "direto",
+   "status": "final",
+   "gold_original": [
+    "f03"
+   ],
+   "nota_gold": "A pergunta agora é 'qual versão estamos?', que é respondida pelas versões publicadas (f11: v1.0, f25: v1.1), não pelo prazo (f03)."
+  },
+  {
+   "id": "q04",
+   "q": "vai ser cobrado?",
+   "gold": [
+    "f17"
+   ],
+   "tipo": "vocabulario",
+   "status": "final",
+   "gold_original": [
+    "f04"
+   ],
+   "nota_gold": "A pergunta agora é 'vai ser cobrado?', que é respondida pelo preço do plano (f17, versão corrigida), não pelo gateway de pagamento (f04)."
+  },
+  {
+   "id": "q05",
+   "q": "Os teste estão sendo monitorados?",
+   "gold": [
+    "f18"
+   ],
+   "tipo": "corrigido",
+   "status": "final"
+  },
+  {
+   "id": "q06",
+   "q": "Em março alguem estava olhando os testes?",
+   "gold": [
+    "f05"
+   ],
+   "tipo": "temporal",
+   "status": "final"
+  },
+  {
+   "id": "q07",
+   "q": "Quantas clínicas podemos atender?",
+   "gold": [
+    "f06"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "q08",
+   "q": "Me de um resumo da Pata Felizes em abril",
+   "gold": [
+    "f07"
+   ],
+   "tipo": "temporal",
+   "status": "final"
+  },
+  {
+   "id": "q09",
+   "q": "Como esta sendo feio os lembretes?",
+   "gold": [
+    "f08",
+    "f25"
+   ],
+   "tipo": "vocabulario",
+   "status": "final",
+   "gold_original": [
+    "f08"
+   ],
+   "nota_gold": "A pergunta agora é sobre como os lembretes são feitos, respondida por f08 (WhatsApp, custo) e f25 (v1.1 trouxe o lembrete)."
+  },
+  {
+   "id": "q10",
+   "q": "As pessoas conseguem entrar no sistema?",
+   "gold": [
+    "f09"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q11",
+   "q": "Oque fazer com dois agendamentos no mesmo horário?",
+   "gold": [
+    "f10"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q12",
+   "q": "a versão 1 foi pro ar quando?",
+   "gold": [
+    "f11"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q13",
+   "q": "O horário esta certo para as clínicas",
+   "gold": [
+    "f12"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "q14",
+   "q": "Oque fez a Vida Animal desistir?",
+   "gold": [
+    "f13"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q15",
+   "q": "Como aceleramos os cadastros",
+   "gold": [
+    "f14"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "q16",
+   "q": "Da pra usar no telefone?",
+   "gold": [
+    "f15"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q17",
+   "q": "O preço do plano atual é caro?",
+   "gold": [
+    "f17"
+   ],
+   "tipo": "corrigido",
+   "status": "final"
+  },
+  {
+   "id": "q18",
+   "q": "Como funciona a emissão de notas fiscais?",
+   "gold": [
+    "f19"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "q19",
+   "q": "Como esta a saúde da API?",
+   "gold": [
+    "f20"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q20",
+   "q": "O Redis está aonde?",
+   "gold": [
+    "f21"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "q21",
+   "q": "O backup é feito de quanto em quanto tempo?",
+   "gold": [
+    "f22"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "q22",
+   "q": "Teve teste de restauração ?",
+   "gold": [
+    "f23"
+   ],
+   "tipo": "temporal",
+   "status": "final"
+  },
+  {
+   "id": "q23",
+   "q": "Teve lembrete de vacina?",
+   "gold": [
+    "f25"
+   ],
+   "tipo": "temporal",
+   "status": "final"
+  },
+  {
+   "id": "q24",
+   "q": "Fazemos o deploy em que horário?",
+   "gold": [
+    "f26"
+   ],
+   "tipo": "direto",
+   "status": "final"
+  },
+  {
+   "id": "q25",
+   "q": "O que houve com a Pata Felizes no mês passado",
+   "gold": [
+    "f24"
+   ],
+   "tipo": "temporal",
+   "status": "final"
+  },
+  {
+   "id": "q26",
+   "q": "Qual nossa meta de clinicas",
+   "gold": [
+    "f27"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q27",
+   "q": "Quantas clinicas estão cadastradas?",
+   "gold": [
+    "f28"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q28",
+   "q": "Quem é responsável pela infraestrutura",
+   "gold": [
+    "f29"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q29",
+   "q": "O que devemos priorizar nos próximos meses?",
+   "gold": [
+    "f30"
+   ],
+   "tipo": "vocabulario",
+   "status": "final"
+  },
+  {
+   "id": "q30",
+   "q": "E o dinheiro em marketing quanto foi?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "q31",
+   "q": "A empresa tem CNPJ?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "q32",
+   "q": "Qual nosso concorrente?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "q33",
+   "q": "Como esta nosso faturamento passado?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "q34",
+   "q": "Utilizamos email para mensagens?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  },
+  {
+   "id": "q35",
+   "q": "E o reembolso, como funciona?",
+   "gold": [],
+   "tipo": "sem-resposta",
+   "status": "final"
+  }
+ ],
+ "nota_corpus": "30 fatos originais (f01-f30) + 94 distratores gerados por agente que não viu as perguntas (d###). Ver evals/experimento-02.md"
+}
