@@ -1,0 +1,81 @@
+name: ci
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[dev]"
+      - name: Testes e avaliações (regressão da busca)
+        run: python -m pytest -q
+
+  test-windows:
+    # Confirma no Windows o que o job `test` já confirma no Linux (achamos um bug só
+    # visível lá: arquivo de banco aberto ao apagar a pasta temporária, corrigido em 2026-09-24).
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e ".[dev]"
+      - name: Testes e avaliações (regressão da busca)
+        run: python -m pytest -q
+
+  instalacao-limpa:
+    # RNF-06: instala só o pacote construído (sem as dependências de desenvolvimento) e
+    # confere que `mini-tars --version` e um ciclo guardar/buscar funcionam.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Constrói o pacote
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Instala o pacote construído num ambiente novo, sem as dependências de dev
+        run: |
+          python -m venv /tmp/instalacao-limpa
+          /tmp/instalacao-limpa/bin/pip install dist/*.whl
+      - run: /tmp/instalacao-limpa/bin/mini-tars --version
+      - name: Guarda e busca um fato fictício (prova que o pacote funciona sozinho)
+        run: |
+          /tmp/instalacao-limpa/bin/python - <<'PY'
+          import tempfile
+          from pathlib import Path
+
+          from mini_tars.service import Service
+          from mini_tars.store import Store
+
+          d = Path(tempfile.mkdtemp())
+          svc = Service(Store(d / "m.db"))
+          svc.remember("fato fictício da instalação limpa")
+          resultado = svc.search("fato fictício instalação limpa")
+          assert resultado and resultado[0][0].text == "fato fictício da instalação limpa"
+          print("ok: instalação limpa funciona")
+          PY
+
+  dependencias:
+    # RNF-07: falha se alguma dependência tiver uma vulnerabilidade conhecida.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip setuptools
+      - run: python -m pip install -e ".[dev]" pip-audit
+      - name: Verifica vulnerabilidades conhecidas nas dependências
+        run: python -m pip_audit

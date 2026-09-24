@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest:*)",
+      "Bash(python3 -m pytest:*)",
+      "Bash(python3 evals/run_exp03.py:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(**/*.pem)",
+      "Read(**/*secret*)",
+      "Read(**/*credential*)",
+      "Edit(./.env)",
+      "Edit(./.env.*)",
+      "Bash(git push:*)",
+      "Bash(twine:*)",
+      "Bash(python -m twine:*)",
+      "Bash(pip publish:*)",
+      "Bash(uv publish:*)",
+      "Bash(rm -rf:*)",
+      "Read(./evals/teste-reservado.json)",
+      "Bash(*teste-reservado*)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "python3 .claude/hooks/verify.py" } ] }
+    ]
+  }
+}
