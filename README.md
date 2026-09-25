@@ -1,5 +1,9 @@
 # mini-tars
 
+[![CI](https://github.com/breno-hbs/mini-tars/actions/workflows/ci.yml/badge.svg)](https://github.com/breno-hbs/mini-tars/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/mini-tars)](https://pypi.org/project/mini-tars/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Servidor de memória (MCP) auto-hospedado, em Python, para assistentes de IA guardarem e recuperarem fatos sobre seus projetos entre sessões.
 
 **Status:** fase 4 (entregar) concluída. Publicado no [PyPI](https://pypi.org/project/mini-tars/). Projeto de aprendizado, sem garantia e sem promessa de suporte — outras pessoas podem usar, por sua conta e risco.
