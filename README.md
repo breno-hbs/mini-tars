@@ -2,7 +2,7 @@
 
 Servidor de memória (MCP) auto-hospedado, em Python, para assistentes de IA guardarem e recuperarem fatos sobre seus projetos entre sessões.
 
-**Status:** fase 4 (entregar) em andamento. Ainda não há versão publicada no PyPI. Projeto de aprendizado, sem garantia e sem promessa de suporte — outras pessoas podem usar, por sua conta e risco.
+**Status:** fase 4 (entregar) concluída. Publicado no [PyPI](https://pypi.org/project/mini-tars/). Projeto de aprendizado, sem garantia e sem promessa de suporte — outras pessoas podem usar, por sua conta e risco.
 
 - Nenhum dado sai da sua máquina: sem telemetria, sem conta, sem chamada de rede de saída.
 - Escuta só em 127.0.0.1 por padrão (veja "Modo HTTP" abaixo).
@@ -10,13 +10,15 @@ Servidor de memória (MCP) auto-hospedado, em Python, para assistentes de IA gua
 
 ## Instalação
 
-Ainda não publicado no PyPI. Enquanto isso, instale a partir do código-fonte (depois de baixar e extrair este repositório), com [pipx](https://pipx.pypa.io/) — um comando, sem misturar com outros projetos Python da sua máquina:
+Com [pipx](https://pipx.pypa.io/) — um comando, sem misturar com outros projetos Python da sua máquina:
 
 ```bash
-pipx install .
+pipx install mini-tars
 ```
 
-Sem `pipx` instalado: `python -m pip install --user pipx` primeiro (ou veja as instruções do pipx para o seu sistema). Sem `pipx` de jeito nenhum, um `pip install .` normal também funciona, de preferência dentro de um ambiente virtual (`python -m venv .venv`).
+Sem `pipx` instalado: `python -m pip install --user pipx` primeiro (ou veja as instruções do pipx para o seu sistema). Sem `pipx` de jeito nenhum, um `pip install mini-tars` normal também funciona, de preferência dentro de um ambiente virtual (`python -m venv .venv`).
+
+Para instalar a partir do código-fonte deste repositório em vez do PyPI (por exemplo, para testar uma mudança ainda não publicada), troque `mini-tars` por `.` nos comandos acima, executando a partir da raiz do repositório.
 
 Confira que instalou:
 
