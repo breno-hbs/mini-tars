@@ -12,6 +12,8 @@ Servidor de memória (MCP) auto-hospedado, em Python, para assistentes de IA gua
 - Escuta só em 127.0.0.1 por padrão (veja "Modo HTTP" abaixo).
 - Requer Python 3.11 ou mais novo.
 
+Inspirado no conceito do [Tars](https://github.com/fonsecabc/tars) (memória pessoal exposta por MCP). O mini-Tars é uma implementação própria, do zero, em Python — com escopo bem menor, sem dependência de PostgreSQL/pgvector e feita como projeto de aprendizado e portfólio (veja `00-descobrir/competitors.md` para a comparação com essa e outras alternativas).
+
 ## Instalação
 
 Com [pipx](https://pipx.pypa.io/) — um comando, sem misturar com outros projetos Python da sua máquina:
